@@ -7,3 +7,5 @@ var_export('GET');
 var_export($_GET);
 var_export('GET');
 var_export($_COOKIE);
+
+echo "<br />KONIEC";
