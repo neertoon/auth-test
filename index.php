@@ -30,3 +30,5 @@ echo "</pre>";
 echo "<br>";
 
 echo "<br />KONIEC";
+
+var_export(file_get_contents('https://mbrzozowski-auth-test.azurewebsites.net/.auth/me'));
