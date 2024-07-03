@@ -1,5 +1,6 @@
 <?php
 echo "<h1>TEST AUTH</h1>";
+echo "<a href=\"/.auth/logout\">Sign out</a><br /><br />";
 
 echo "<pre>";
 var_export('POST');
