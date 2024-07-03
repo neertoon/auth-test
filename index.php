@@ -31,4 +31,23 @@ echo "<br>";
 
 echo "<br />KONIEC";
 
-var_export(file_get_contents('https://mbrzozowski-auth-test.azurewebsites.net/.auth/me'));
+$url = 'https://mbrzozowski-auth-test.azurewebsites.net/.auth/me';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+$rt = curl_exec($ch);
+$info = curl_getinfo($ch);
+echo $info["http_code"];
+
+echo "<br>";
+echo "<pre>";
+var_export('TOKEN');
+var_export($rt);
+echo "</pre>";
+echo "<br>";
