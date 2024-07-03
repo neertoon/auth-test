@@ -2,6 +2,12 @@
 echo "<h1>TEST AUTH</h1>";
 echo "<a href=\"/.auth/logout\">Sign out</a><br /><br />";
 
+
+echo "<pre>";
+var_export('phpinput');
+var_export(file_get_contents('php://input'));
+echo "</pre>";
+echo "<br>";
 echo "<pre>";
 var_export('POST');
 var_export($_POST);
